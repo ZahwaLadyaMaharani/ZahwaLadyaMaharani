@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css.css" rel="stylesheet">
+    <title>Survey Kepuasan</title>
+</head>
+<body>
+    <h1>Survey Kepuasan Pelanggan Coffetalk</h1>
+    <form action="#" class="container">
+        <br/>
+        <br/>
+        <label for="nama">Nama Pelanggan</label>
+        <input type="text" name="nama" id="nama"/>
+        <br/>
+        <br/>
+        <label for="Alamat">Alamat Pelanggan</label>
+        <textarea name="Alamat" id="Alamat" cols="30"></textarea>
+        <br/>
+        <br/>
+        <label for="JenisKelamin">JenisKelamin</label>
+        <input type="radio" name="JenisKelamin" id="JenisKelamin" value="Pria"/> Pria
+        <input type="radio" name="JenisKelamin" id="JenisKelamin" value="Wanita"/> Wanita
+        <br/>
+        <br/>
+        <label for="Nilai Kepuasan">Nilai Kepuasan Minuman(1-10)</label>
+        <input type="text" name="Nilai Kepuasan" id="Nilai Kepuasan"/>
+        <br/>
+        <br/>
+        <label for="Minuman">Minuman Baru</label>
+        <input type="checkbox" name="Minuman" id="Minuman" value="Americano"/> Americano
+        <input type="checkbox" name="Minuman" id="Minuman" value="Chocolate"/> Chocolate
+        <input type="checkbox" name="Minuman" id="Minuman" value="Matcha Latte"/> Matcha Latte
+        <br />
+        <br/>
+        <label for="Nilai Kepuasan">Nilai Kepuasan Makanan(1-10)</label>
+        <input type="text" name="Nilai Kepuasan" id="Nilai Kepuasan"/>
+        <br/>
+        <br/>
+        <label for="Makanan">Makanan Baru</label>
+        <input type="checkbox" name="Makanan" id="Makanan" value="Croffle"/> Croffle
+        <input type="checkbox" name="Makanan" id="Makanan" value="Nasi Goreng Seafood"/> Nasi Goreng Seafood
+        <input type="checkbox" name="Makanan" id="Makanan" value="Spagetti"/> Spagetti
+        <br/>
+        <br/>
+        <label for="layanan">Apakah anda menggunakan layanan kami</label>
+        <br />
+        <br/>
+        <input type="radio" name="layanan" id="layanan" value="Ya" /> Ya
+        <input type="radio" name="layanan" id="layanan" value="Tidak" /> Tidak
+        <br />
+        <br/>
+        <label for="saran">Kritik dan Saran</label>
+        <br />
+        <br/>
+        <textarea name="saran" id="saran" cols="30" rows="3"></textarea>
+        <br />
+        <br/>
+        <input type="button" value="Kirim" onclick="tampilData()" />
+    </form>
+    <script>
+        function tampilData() {
+            var Nama ,Pelanggan = document.getElementById("Nama Pelanggan").value;
+            var Alamat ,Pelanggan = document.getElementById("Alamat Pelanggan").value;
+            var jeniskelamin = document.querySelector("input[name = jeniskelamin]:checked").value;
+            var nilai ,Kepuasan ,Minuman= document.getElementById("nilai Kepuasan Minuman").value;
+            var nilai ,Kepuasan ,Makanan= document.getElementById("nilai Kepuasan Makanan").value;
+            var layanan = document.querySelector("input[name = layanan]:checked").value;
+            var saran = document.getElementById("saran").value;
+            var produk = document.getElementsByName("produk");
+            var daftarproduk = ''
+            
+            for(var produk2 of produk) 
+            {
+                if(produk2.checked)
+                {
+                    daftarproduk += ', '+ produk2.value
+                }
+            }
+
+            daftarproduk = daftarproduk.substring(1)
+
+            alert(
+                "Nama : " +
+                    nama + 
+                    "\nAlamat : " +
+                    Alamat +
+                    "\nJenis Kelamin : " +
+                    jeniskelamin +
+                    "\nNilai Kepuasan Minuman: " +
+                    nilai, Minuman +
+                    "\nNilai Kepuasan Makanan: " +
+                    nilai, Makanan +
+                    "\nInfo Layanan : " +
+                    daftarproduk +
+                    "\nMenggunakan Layanan : " +
+                    layanan +
+                    "\nKritik dan Saran : " +
+                    saran
+            );
+        }
+    </script>
+</body>
+</html>
